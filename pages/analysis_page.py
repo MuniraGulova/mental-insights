@@ -14,7 +14,7 @@ df_copy = data.copy()
 df_copy['mental_health'] = df_copy['mental_health'].apply(lambda x: 1 if x in ["Yes", "Possibly"] else 0)
 df_copy = df_copy[df_copy['gender'] != 'Other']
 
-df_removed = df_copy.iloc[:5]  
+ 
 df = df_copy.drop(df_copy.index[:5])
 
 y = df['mental_health']
