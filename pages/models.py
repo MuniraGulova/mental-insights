@@ -19,8 +19,7 @@ make_sidebar()
 st.title("🧠 Workplace Mental Health Survey")
 
 st.write("Explore how workplace factors and personal demographics relate to mental health at work.")
-data = df_removed.copy()
-st.dataframe(data)
+st.dataframe(df_test)
 
 st.header("👥 Demographic Information")
 
