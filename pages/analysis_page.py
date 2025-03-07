@@ -10,7 +10,9 @@ make_sidebar()
 st.title('Data Analysis Page')
 
 data = pd.read_csv('data/data.csv')
-df = data.copy()
+
+df_removed = data.iloc[:5]  
+df = df.drop(data.index[:5])
 
 df['mental_health'] = df['mental_health'].apply(lambda x: 1 if x in ["Yes", "Possibly"] else 0)
 df = df[df['gender'] != 'Other']
