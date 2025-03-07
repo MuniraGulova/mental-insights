@@ -10,17 +10,13 @@ make_sidebar()
 st.title('Data Analysis Page')
 
 data = pd.read_csv('data/data.csv')
-df_copy = data.copy()
-df_copy['mental_health'] = df_copy['mental_health'].apply(lambda x: 1 if x in ["Yes", "Possibly"] else 0)
-df_copy = df_copy[df_copy['gender'] != 'Other']
-
-
-df = df_copy.drop(df_copy.index[:5])
+df['mental_health'] = df['mental_health'].apply(lambda x: 1 if x in ["Yes", "Possibly"] else 0)
+df = df[df['gender'] != 'Other']
 
 y = df['mental_health']
 X = df.drop(['mental_health'], axis=1)
 
-df_mod = df_copy.iloc[:5]
+
 
 with st.expander('📂 Data', expanded=False):
     st.write('Target: mental_health')
