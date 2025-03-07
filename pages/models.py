@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from pages.analysis_page import X, y, df_copy
+from pages.analysis_page import df_removed, X, y 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, TargetEncoder, OneHotEncoder
 from sklearn.preprocessing import StandardScaler
@@ -14,7 +14,7 @@ from navigation import make_sidebar
 
 make_sidebar()
 
-df_removed = df_copy.iloc[:5] 
+
 st.title("🧠 Workplace Mental Health Survey")
 
 st.write("Explore how workplace factors and personal demographics relate to mental health at work.")
