@@ -23,6 +23,7 @@ X = df.drop(['mental_health'], axis=1)
 with st.expander('📂 Data', expanded=False):
     st.write('Target: mental_health')
     st.dataframe(df)
+    st.dataframe(df_test)
 
 column_descriptions = {
     'tech_company': 'Работает ли человек в техкомпании (да/нет)',
