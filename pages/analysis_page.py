@@ -123,3 +123,5 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(corr_matrix.astype(float), annot=True, cmap="coolwarm")
 plt.title("Cramér's V Correlation Heatmap")
 st.pyplot(plt)
+
+print(df_mod)
