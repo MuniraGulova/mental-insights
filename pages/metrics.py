@@ -42,8 +42,6 @@ with tab_metrics:
 
         metrics_data.append(train_metrics)
 
-        st.divider()
-
         # Сохраняем данные для ROC
         y_test_proba = model.predict_proba(X_test)[:, 1]
         roc_auc = roc_auc_score(y_test, y_test_proba)
