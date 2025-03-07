@@ -10,6 +10,7 @@ make_sidebar()
 st.title('Data Analysis Page')
 
 data = pd.read_csv('data/data.csv')
+df = data.copy()
 df['mental_health'] = df['mental_health'].apply(lambda x: 1 if x == "Yes" else 0)
 df = df[df['gender'] != 'Other']
 
