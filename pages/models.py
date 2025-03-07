@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from pages.analysis_page import X, y 
+from pages.analysis_page import X, y, df_mod
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, TargetEncoder, OneHotEncoder
 from sklearn.preprocessing import StandardScaler
@@ -18,6 +18,7 @@ make_sidebar()
 st.title("🧠 Workplace Mental Health Survey")
 
 st.write("Explore how workplace factors and personal demographics relate to mental health at work.")
+st.dataframe(df_mod)
 st.header("👥 Demographic Information")
 
 selected_gender = st.selectbox(
