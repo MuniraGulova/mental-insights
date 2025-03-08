@@ -48,8 +48,8 @@ with tab_metrics:
         fpr, tpr, _ = roc_curve(y_test, y_test_proba)
         roc_data[select_model] = (fpr, tpr, roc_auc)
 
-df_metrics = pd.DataFrame(metrics_data)
-st.dataframe(df_metrics)
+    df_metrics = pd.DataFrame(metrics_data)
+    st.dataframe(df_metrics)
 
 with tab_roc:
     st.write("### ROC Curves for All Models")
