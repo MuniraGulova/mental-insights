@@ -119,11 +119,11 @@ def cramers_v(x, y):
     return np.sqrt(phi2 / min(k - 1, r - 1))
 
 
-corr_matrix = pd.DataFrame(index=X.columns, columns=X.columns)
+corr_matrix = pd.DataFrame(index=df.columns, columns=df.columns)
 
-for col1 in X.columns:
-    for col2 in X.columns:
-        corr_matrix.loc[col1, col2] = cramers_v(X[col1], X[col2])
+for col1 in df.columns:
+    for col2 in df.columns:
+        corr_matrix.loc[col1, col2] = cramers_v(df[col1], df[col2])
 
 plt.figure(figsize=(10, 8))
 sns.heatmap(corr_matrix.astype(float), annot=True, cmap="coolwarm")
